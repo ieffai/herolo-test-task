@@ -1,0 +1,28 @@
+@import './colors.scss';
+@import './fonts.scss';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: $font-color;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.25em;
+  position: relative;
+}
+
+#root {
+  max-width: 2560px;
+  height: 100vh;
+  width: 100%;
+}
+
+.page {
+  padding: 0 2em;
+  height: 74vh;
+  display: flex;
+  flex-direction: column;
+}
+
