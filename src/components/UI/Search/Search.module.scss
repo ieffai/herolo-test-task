@@ -14,6 +14,7 @@
     }
 
     input {
+        position: relative;
         font-family: inherit;
         background: transparent;
         border-radius: 50%;
@@ -24,6 +25,7 @@
         -webkit-appearance: none;
         -moz-appearance: none;
         appearance: none;
+        z-index: 1;
     }
 
     input::placeholder {
@@ -36,7 +38,7 @@
 
     input:focus, input:valid {
         background: $background-color;
-        border-radius: 1em;
+        border-radius: 0;
         box-shadow: none;
         padding: 0.75em 1em;
         transition-duration: calc(1s * 0.25);
@@ -56,6 +58,7 @@
         height: 1.5em;
         transform: translate(0,-1em) rotate(-180deg) translate(7.5em,-0.25em);
     }
+
     input::-webkit-search-decoration {
         -webkit-appearance: none;
     }
@@ -78,8 +81,6 @@
     }
 
 }
-
-
 
 
 // /* Dark mode */

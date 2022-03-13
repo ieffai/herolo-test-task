@@ -1,0 +1,24 @@
+.details {
+    padding-top: 3em;
+    position: relative;
+           text-align: center;
+    &__header {
+        display:flex;
+        font-size: 1em;
+       
+    }
+    &__icon {
+        width: 6vw;
+        height: 6vh;
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+    &__title {
+        margin-top: 10vh;
+    }
+
+}

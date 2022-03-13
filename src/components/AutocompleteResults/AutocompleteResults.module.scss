@@ -1,0 +1,36 @@
+@import '../../styles/colors.scss';
+
+.options {
+    border: 2px solid $font-color;
+    background-color: $background-color;
+    margin-top: -65px;
+    padding-top: 35px;
+    padding-bottom: 5px;
+    z-index: 1;
+}
+
+.option {
+  font-size: 16px;
+  width: 100%;
+  cursor: pointer;
+  margin-bottom: 3px;
+  margin-left: 10px;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.cancelSearch {
+    position:absolute;
+    z-index: 3;
+    top: 1em;
+    right: 1.5em;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: $font-color;
+    background-color: transparent;
+    &:hover {
+        opacity: 0.8;
+  }
+}
