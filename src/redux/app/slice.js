@@ -6,6 +6,7 @@ const slice = createSlice({
     isLoading: false,
     searched: [],
     error: '',
+
   },
   reducers: {
     setIsLoading(state, action) {
@@ -16,7 +17,7 @@ const slice = createSlice({
     },
     setError(state, action) {
       state.error = action.payload;
-    },
+    }
   },
 });
 

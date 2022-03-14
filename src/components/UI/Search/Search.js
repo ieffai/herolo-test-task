@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getSearchResults } from '../../../api/weatherService';
 import { getErrorSelector, getSearchedResultsSelector } from '../../../redux/app/selectors';
 import { setError, setSearched } from '../../../redux/app/slice';
-import { setCurrentWeatherId } from '../../../redux/weather/slice';
+import { setWeatherInfo } from '../../../redux/weather/slice';
 import AutocompleteResults from '../../AutocompleteResults/AutocompleteResults';
 
 import classes from './Search.module.scss';
@@ -15,31 +15,38 @@ const Search = () => {
     const [input, setInput] = useState('');
 
     const onSearch = text => {
-        dispatch(getSearchResults(text))
+        !text && dispatch(setSearched([]));
+        text && dispatch(getSearchResults(text))
     };
 
-    const updateField = (event, value, update = true) => {
+    const updateField = (event, id, update = true) => {
         dispatch(setError(''))
-        const name = event?.target ? event.target.value : event;
-        const isCompleted = results.length === 1 && results[0].LocalizedName === name;
+        const input = event?.target ? event.target.value : event;
+        const city = input && input[0].toUpperCase() + input.slice(1)
+        const isCompleted = results.length === 1 && results[0].LocalizedName === city;
+        const payload = {
+            id: id,
+            city: city
+        }
         if (update) {
-            onSearch(name);
-            setInput(name);
-            isCompleted && setCurrentWeatherId(results[0].Key);
+            onSearch(city);
+            setInput(city);
+            isCompleted && dispatch(setWeatherInfo(payload));
         } else {
-            setInput(name);
-            dispatch(setCurrentWeatherId(value))
+            setInput(city);
+            dispatch(setWeatherInfo(payload));
             dispatch(setSearched([]));
         }
     }
 
-    const updateText = (name, value) => {
-        updateField(name, value, false);
+    const updateText = (city, id) => {
+        updateField(city, id, false);
         dispatch(setSearched([]));
     };
 
     const cancelSearch = () => {
         setInput('');
+        dispatch(setError(''))
         dispatch(setSearched([]));
     };
 
@@ -54,10 +61,17 @@ const Search = () => {
                 onChange={updateField}
             />
             <span className={classes.search__caret}></span>
+            {
+                input.length > 0 &&
+                <button
+                    className={classes.cancelSearch}
+                    onClick={cancelSearch}>
+                    x
+                </button>
+            }
             {results.length > 0 && (
                 <AutocompleteResults
                     updateText={updateText}
-                    cancelSearch={cancelSearch}
                 />
             )}
             {

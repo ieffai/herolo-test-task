@@ -1,20 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { INITIAL_WEATHER } from '../../utils/constants';
 
 const slice = createSlice({
   name: 'weather',
   initialState: {
-    currentWeather: {
-      Key: INITIAL_WEATHER
-    },
+    currentWeather: {},
+    weatherInfo: {},
     favorites: [],
+    isMetric: true
   },
   reducers: {
     setCurrentWeather(state, action) {
-      state.currentWeather = action.payload;
+      state.currentWeather = {
+        ...state.weatherInfo, ...action.payload
+      };
+    },
+    setWeatherInfo(state, action) {
+      state.weatherInfo = action.payload;
     },
     setCurrentWeatherId(state, action) {
-      state.currentWeather.Key = action.payload;
+      state.currentWeather.id = action.payload
+    },
+    setIsMetric(state, action) {
+      state.isMetric = action.payload;
     },
     setFavorite(state, action) {
       state.favorites = [...state.favorites, action.payload];
@@ -28,7 +35,9 @@ const slice = createSlice({
 export default slice.reducer;
 export const {
   setCurrentWeather,
+  setWeatherInfo,
   setCurrentWeatherId,
   setFavorite,
-  deleteFavorite
+  setIsMetric,
+  deleteFavorite,
 } = slice.actions;

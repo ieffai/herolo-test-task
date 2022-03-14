@@ -1,11 +1,23 @@
 import React, { memo } from 'react'
-import { LIKE_ICON } from '../../../utils/images';
+import { useSelector } from 'react-redux';
+import { getIsLikedSelector } from '../../../redux/weather/selectors';
+import { LIKE_ICON, UNLIKE_ICON } from '../../../utils/images';
 import classes from './LikeBtn.module.scss';
 
-const LikeBtn = () => {
+const LikeBtn = ({ setToFavorite, delFromFavorite, payload }) => {
+    const isLiked = useSelector(getIsLikedSelector);
+    // console.log(isLiked);
+    // console.log(payload);
+    const likeHandler = () => {
+        if (isLiked) {
+            delFromFavorite(payload.id);
+        } else {
+            setToFavorite(payload);
+        }
+    }
     return (
-        <div className={classes.like}>
-            <img src={LIKE_ICON} alt='liked' />
+        <div className={classes.like} onClick={likeHandler}>
+            <img src={isLiked ? LIKE_ICON : UNLIKE_ICON} alt='liked' />
         </div>
     )
 }

@@ -3,18 +3,13 @@ import { useSelector } from 'react-redux';
 import { getSearchedResultsSelector } from '../../redux/app/selectors';
 import classes from './AutocompleteResults.module.scss';
 
-const AutocompleteResults = ({ updateText, cancelSearch }) => {
+const AutocompleteResults = ({ updateText }) => {
     const results = useSelector(getSearchedResultsSelector);
 
-    const handleSelect = (name, value) => {
-        console.log(name);
-        // updateText(name, value);
+    const handleSelect = (city, id) => {
+        updateText(city, id);
     }
 
-    const handleReset = (e) => {
-        e.preventDefault();
-        cancelSearch();
-    }
     return (
         <div className={classes.options}>
             {results.map((item) => (
@@ -24,11 +19,6 @@ const AutocompleteResults = ({ updateText, cancelSearch }) => {
                     </span>
                 </div>
             ))}
-            <button
-                className={classes.cancelSearch}
-                onClick={handleReset}>
-                x
-            </button>
         </div>
     )
 }
