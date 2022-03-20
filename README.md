@@ -10,8 +10,11 @@ Used <a href="https://developer.accuweather.com/" target="_blank">**AccuWeather 
 ```
 $ git clone https://github.com/ieffai/herolo-test-task.git
 $ npm install
+$ set up you accuweather API key
 $ get your own Google API key to fetch city photos on requests
 $ create google custom search engine to get privite search ID
+$ all keys must be paste in .env file in your project folder (e.g. /weatherApp/.env)
+$ name of the keys have to start from REACT_APP_YOUR_KEY
 $ npm run start
 ```
 
