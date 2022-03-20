@@ -5,11 +5,15 @@ const getWeatherState = (state) => state.weather;
 
 export const getCurrentWeatherSelector = createSelector(getWeatherState, (weather) => weather.currentWeather);
 export const getCurrentWeatherIdSelector = createSelector(getWeatherState, (weather) => weather.weatherInfo.id);
-export const getPlaceNameSelector = createSelector(getWeatherState, (weather) => weather.weatherInfo?.city);
-export const getWeatherIconSelector = createSelector(getWeatherState, (weather) => {
+export const getCurrentPlaceSelector = createSelector(getWeatherState, (weather) => weather.weatherInfo.city);
+export const getUnitTypeSelector = createSelector(getWeatherState, (weather) => weather.isMetric);
+
+export const getWeatherDetailsSelector = createSelector(getWeatherState, (weather) => {
     const iconId = weather.currentWeather?.icon;
+    const city = weather.currentWeather?.city;
+    const description = weather.currentWeather?.desc;
     const icon = icons.find(item => item.number === +iconId)?.url;
-    return icon
+    return [icon, city, description]
 });
 
 export const getTemperatureSelector = createSelector(getWeatherState, (weather) => {
@@ -22,11 +26,11 @@ export const getTemperatureSelector = createSelector(getWeatherState, (weather) 
 });
 
 export const getIsLikedSelector = createSelector(getWeatherState, (weather) => {
-    const id = weather.initialWeather?.id;
-    const isLiked = weather.favorites.includes(item => item.Key === +id);
+    const id = weather.weatherInfo?.id;
+    const isLiked = weather.favorites.some(item => +item.id === +id);
     return isLiked
 });
 
-export const getWeatherTextSelector = createSelector(getWeatherState, (weather) => weather.currentWeather?.desc);
 export const getFavoritesSelector = createSelector(getWeatherState, (weather) => weather.favorites);
 
+export const getForecastSelector = createSelector(getWeatherState, (weather) => weather.forecast);

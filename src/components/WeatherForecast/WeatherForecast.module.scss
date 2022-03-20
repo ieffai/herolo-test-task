@@ -1,4 +1,18 @@
 .forecast {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  margin-bottom: 25px;
+}
+
+@media screen and (max-width: 1440px) {
+  .forecast {
+    margin-bottom: 50px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .forecast {
+    display: none;
+  }
 }

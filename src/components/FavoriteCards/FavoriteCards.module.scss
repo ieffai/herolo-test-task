@@ -1,0 +1,25 @@
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 3em;
+  position: relative;
+}
+
+@media screen and (max-width: 1440px) {
+  .cards {
+    padding: 2em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .cards {
+    padding: 1em;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .cards {
+    flex-direction: column;
+  }
+}

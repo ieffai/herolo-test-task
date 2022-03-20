@@ -6,6 +6,7 @@ const slice = createSlice({
     currentWeather: {},
     weatherInfo: {},
     favorites: [],
+    forecast: [],
     isMetric: true
   },
   reducers: {
@@ -17,6 +18,12 @@ const slice = createSlice({
     setWeatherInfo(state, action) {
       state.weatherInfo = action.payload;
     },
+    setWeatherId(state, action) {
+      state.weatherInfo.id = action.payload;
+    },
+    setForecast(state, action) {
+      state.forecast = action.payload;
+    },
     setCurrentWeatherId(state, action) {
       state.currentWeather.id = action.payload
     },
@@ -27,7 +34,7 @@ const slice = createSlice({
       state.favorites = [...state.favorites, action.payload];
     },
     deleteFavorite(state, action) {
-      state.favorites = state.favorites.filter((favorite) => favorite.LocalSource.Id !== action.payload);
+      state.favorites = state.favorites.filter((favorite) => favorite.id !== action.payload);
     }
   },
 });
@@ -36,8 +43,10 @@ export default slice.reducer;
 export const {
   setCurrentWeather,
   setWeatherInfo,
+  setForecast,
   setCurrentWeatherId,
   setFavorite,
   setIsMetric,
   deleteFavorite,
+  setWeatherId
 } = slice.actions;

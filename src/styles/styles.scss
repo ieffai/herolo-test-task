@@ -1,5 +1,5 @@
-@import './colors.scss';
-@import './fonts.scss';
+@import "./colors.scss";
+@import "./fonts.scss";
 * {
   margin: 0;
   padding: 0;
@@ -8,17 +8,18 @@
 }
 
 body {
-  font-family: 'Rubik', sans-serif;
+  font-family: "Rubik", sans-serif;
   font-size: 1.25em;
   position: relative;
 }
 
-#root {
-  max-width: 2560px;
+.app {
+  max-width: 1440px;
+  margin: 0 auto;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
-
 .page {
   padding: 0 2em;
   height: 74vh;
@@ -26,3 +27,34 @@ body {
   flex-direction: column;
 }
 
+@media screen and (max-width: 425px) {
+  .page {
+    padding: 0 1em;
+  }
+}
+
+.background {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  background-position: center;
+  z-index: 0;
+  &:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+    background-image: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 0) 60%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
+  }
+}

@@ -1,7 +1,6 @@
 import React, { memo } from 'react'
 import { NavLink } from 'react-router-dom';
 import { publicRoutes } from '../../routes/publicRoutes';
-import { HOME_ICON } from '../../utils/images';
 import classes from './NavList.module.scss';
 
 const NavList = () => {
@@ -17,7 +16,7 @@ const NavList = () => {
                         <NavLink
                             style={({ isActive }) => (isActive ? activeStyle : undefined)}
                             to={link.path}>
-                            <img className={classes.navlist__icon} src={HOME_ICON} alt="Herolo logo" />
+                            <img className={classes.navlist__icon} src={link.image} alt="Herolo logo" />
                         </NavLink>
                     </li>
                 ))}

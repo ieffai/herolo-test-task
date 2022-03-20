@@ -6,7 +6,7 @@ const Home = () => {
         <div className='page'>
             <Search />
             <WeatherDetails />
-            {/* <WeatherForecast /> */}
+            <WeatherForecast />
         </div>
     )
 }

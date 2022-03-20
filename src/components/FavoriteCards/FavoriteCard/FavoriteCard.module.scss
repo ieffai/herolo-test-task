@@ -1,0 +1,87 @@
+@import "../../../styles/colors.scss";
+
+.card {
+  width: 30%;
+  height: 20vh;
+  -webkit-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  background-color: darken($background-color, 20%);
+  opacity: 0.9;
+  cursor: pointer;
+  color: $input-color;
+  &:hover {
+    -webkit-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.9);
+    box-shadow: 0px 0px 8px 5px rgba(0, 0, 0, 0.9);
+  }
+  span {
+    color: inherit;
+  }
+  &__delete {
+    width: 25px;
+    height: 25px;
+    align-self: flex-end;
+    cursor: pointer;
+    z-index: 5;
+    &:hover {
+      transform: scale(1.4);
+      opacity: 0.9;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    object-fit: contain;
+    width: 15vw;
+    height: 15vh;
+    align-self: center;
+  }
+  @media screen and (max-width: 375px) {
+    &__icon {
+      width: 50%;
+      height: 20%;
+    }
+  }
+
+  p {
+    margin-top: auto;
+    align-self: center;
+    font-size: 1em;
+    color: inherit;
+    z-index: 1;
+  }
+  @media screen and (max-width: 2560px) {
+    p {
+      font-size: 2em;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    p {
+      font-size: 1em;
+    }
+  }
+
+  span {
+    align-self: center;
+    font-size: 2em;
+    margin-top: auto;
+    z-index: 1;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    width: 45%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .card {
+    width: 90%;
+  }
+}

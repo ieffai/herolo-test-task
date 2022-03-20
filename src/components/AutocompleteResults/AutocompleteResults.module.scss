@@ -1,7 +1,7 @@
 @import "../../styles/colors.scss";
 
 .options {
-  border: 2px solid $font-color;
+  border: 2px solid $input-color;
   background-color: $background-color;
   margin-top: -50px;
   padding-top: 35px;
@@ -19,5 +19,8 @@
   z-index: 99;
   &:hover {
     opacity: 0.8;
+  }
+  span {
+    color: $input-color;
   }
 }

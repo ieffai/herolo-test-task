@@ -10,10 +10,17 @@ export { default as AppRouter } from './AppRouter';
 export { default as Footer } from './Footer/Footer';
 export { default as NavList } from './NavList/NavList';
 export { default as AutocompleteResults } from './AutocompleteResults/AutocompleteResults';
+export { default as NoResults } from './NoResults/NoResults';
 
-//CONTENT COMPONENTS
+//HOME PAGE
 export { default as WeatherDetails } from './WeatherDetails/WeatherDetails';
+export { default as DetailsHeader } from './WeatherDetails/DetailsHeader/DetailsHeader';
+export { default as DetailsInfo } from './WeatherDetails/DetailsInfo/DetailsInfo';
+export { default as DetailsTitle } from './WeatherDetails/DetailsTitle/DetailsTitle';
 export { default as WeatherForecast } from './WeatherForecast/WeatherForecast';
 export { default as ForecastCard } from './WeatherForecast/ForecastCard/ForecastCard';
-export { default as FavoriteCard } from './FavoriteCard/FavoriteCard';
 
+//FAVORITES PAGE
+
+export { default as FavoriteCards } from './FavoriteCards/FavoriteCards';
+export { default as FavoriteCard } from './FavoriteCards/FavoriteCard/FavoriteCard';

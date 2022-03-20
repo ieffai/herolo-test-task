@@ -1,0 +1,34 @@
+.icon {
+  width: 6vw;
+  height: 6vh;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 425px) {
+  .icon {
+    position: absolute;
+    top: 100%;
+    left: 8%;
+    width: 70vw;
+    height: 20vh;
+  }
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 0;
+  p {
+    font-size: 2em;
+  }
+  @media screen and (max-width: 2560px) {
+    p {
+      font-size: 2em;
+    }
+  }
+  @media screen and (max-width: 1440px) {
+    p {
+      font-size: 1em;
+    }
+  }
+}

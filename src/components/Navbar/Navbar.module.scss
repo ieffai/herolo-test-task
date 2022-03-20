@@ -1,38 +1,78 @@
-@import '../../styles/colors.scss';
+@import "../../styles/colors.scss";
 
 .navbar {
+  display: flex;
+  height: 1em;
+  justify-content: space-between;
+  align-items: center;
+  padding: 3em;
+
+  &__logo {
     display: flex;
-    height: 1em;
-    justify-content: space-between;
-    padding: 2em;
+    width: 150px;
+    height: 50px;
+  }
 
+  @media screen and (max-width: 425px) {
     &__logo {
-        display: flex;
-        width: 5vw;
-        height: 2vw;
+      width: 75px;
+      height: 25px;
     }
-
-    &__info {
-        display: flex;
-        align-items: center;
-
+  }
+  @media screen and (max-width: 320px) {
+    &__logo {
+      display: none;
     }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+  &__line {
+    text-align: center;
+  }
+  @media screen and (max-width: 769px) {
     &__line {
-        text-align: center;
+      display: none;
     }
+  }
 
-    &__line::before {
-        content: "";
-        height: 1px;
-        width: 30vw;
-        background-color: $font-color;
-        display: inline-block;
-        opacity: .2;
-        position: relative;
-        top: -5px;
+  &__line::before {
+    content: "";
+    height: 1px;
+    width: 30vw;
+    background-color: $font-color;
+    display: inline-block;
+    opacity: 0.2;
+    position: relative;
+    top: -5px;
+  }
+  p {
+    align-self: center;
+    margin: 0 25px;
+    @media screen and (max-width: 425px) {
+      span {
+        display: none;
+      }
     }
-    span {
-        align-self: center;
-        margin: 0 25px;
+  }
+
+  input[type="checkbox"] {
+    visibility: hidden;
+    &:checked + label {
+      transform: rotate(360deg);
+      background-color: #000;
+      &:before {
+        transform: translateX(90px);
+        background-color: #fff;
+      }
     }
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .navbar {
+    padding: 2em;
+  }
 }

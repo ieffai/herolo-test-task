@@ -10,7 +10,9 @@ const Navbar = () => {
             </div>
             <div className={classes.navbar__info}>
                 <div className={classes.navbar__line} />
-                <span>Weather App by Sergey Karlinskiy</span>
+                <p>
+                    Weather App<span> by Sergey Karlinskiy</span>
+                </p>
             </div>
         </header>
     )

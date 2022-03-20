@@ -19,14 +19,15 @@
     font-family: inherit;
     background: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 0 0.25em inset;
-    caret-color: $font-color;
+    box-shadow: 0 0 0 0.15em $font-color;
+    caret-color: $input-color;
     width: 2em;
     height: 2em;
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     z-index: 3;
+    color: $input-color;
   }
 
   input::placeholder {
@@ -66,7 +67,6 @@
     -webkit-appearance: none;
   }
   label {
-    color: #e3e4e8;
     overflow: hidden;
     position: absolute;
     width: 0;
@@ -91,7 +91,7 @@
   cursor: pointer;
   outline: none;
   border: none;
-  color: $font-color;
+  color: $input-color;
   background-color: transparent;
   &:hover {
     opacity: 0.8;

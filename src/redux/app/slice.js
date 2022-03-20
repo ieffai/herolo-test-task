@@ -6,7 +6,7 @@ const slice = createSlice({
     isLoading: false,
     searched: [],
     error: '',
-
+    img: '',
   },
   reducers: {
     setIsLoading(state, action) {
@@ -17,6 +17,9 @@ const slice = createSlice({
     },
     setError(state, action) {
       state.error = action.payload;
+    },
+    setBackgroundImage(state, action) {
+      state.img = action.payload;
     }
   },
 });
@@ -25,5 +28,6 @@ export default slice.reducer;
 export const {
   setIsLoading,
   setSearched,
-  setError
+  setError,
+  setBackgroundImage
 } = slice.actions;
