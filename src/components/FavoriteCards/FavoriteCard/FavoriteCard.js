@@ -17,7 +17,8 @@ const FavoriteCard = ({ id, place, icon, temp, deg }) => {
         navigate(HOME_ROUTE);
     }
 
-    const delHandler = () => {
+    const delHandler = (e) => {
+        e.stopPropagation();
         dispatch(deleteFavorite(id));
     }
 
