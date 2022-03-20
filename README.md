@@ -3,7 +3,7 @@
 SPA Weather App with search autocomplete, 5-day weather forecast and geolocations on board.<br />
 Used <a href="https://developer.accuweather.com/" target="_blank">**AccuWeather API**</a>
 
-🚀🚀🚀 The demo <a href="https://weather-app-herolo-5a573.firebaseapp.com/" target="_blank">**is here**</a>🚀🚀🚀<br />
+🚀🚀🚀 The demo <a href="https://weather-app-herolo-5a573.web.app/" target="_blank">**is here**</a>🚀🚀🚀<br />
 
 ### Local Deploy
 
